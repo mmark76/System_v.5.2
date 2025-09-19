@@ -75,7 +75,7 @@ button:hover, select:hover {
 }
 
 #libraryText {
-  width: 40%;  /* το δεξί λίγο πιο μεγάλο */
+  width: 40%;  /* το δεξί */
   height: 220px;
   background: #222;
   color: #eee;
@@ -138,6 +138,7 @@ footer {
   position: sticky;
   bottom: 0;
 }
+
 
 
 
