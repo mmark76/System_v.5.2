@@ -8,5 +8,6 @@ start "" python -m http.server 8000
 timeout /t 2 >nul
 
 :: Άνοιγμα default browser στο αρχείο
-start "" http://localhost:8000/Markellos_System.html
+start "" http://localhost:8000/index.html
 exit
+
