@@ -27,7 +27,6 @@
   
   <!-- ✅ CSS Styles -->
   <link rel="stylesheet" href="css/styles.css">
-  <link rel="stylesheet" href="https://mmark76.github.io/chessboardjs-hosting/chessboardjs-1.0.0/css/chessboard-1.0.0.min.css" />
   
   <!-- ✅ External Libraries -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -65,13 +64,12 @@
 
   <div class="textareas-container">
     <!-- Αριστερό textarea για PGN -->
-    <textarea id="pgnText" rows="5" placeholder="Επικόλλησε PGN εδώ"></textarea>
-
+    <textarea id="pgnText" rows="5" placeholder="Paste PGN/SAN εδώ και πάτα ‘Parse PGN / SAN’, ή χρησιμοποίησε ‘Import PGN / SAN’ and ‘Choose file’ για φόρτωση αρχείου."></textarea>
     <!-- Δεξί textarea για Βιβλιοθήκες -->
     <textarea id="libraryText" rows="5" placeholder="Βιβλιοθήκες..."></textarea>
   </div>
 
-  <input type="file" id="pgnFileInput">
+  <h4>Import PGN / SAN</h4> <input type="file" id="pgnFileInput"type="file" accept=".pgn,.txt"/>
   <button id="parsePgnBtn">Parse PGN</button>
   <button id="clearBtn">Clear</button>
   <button id="openFenBuilderBtn">Άνοιγμα FEN Builder</button>
@@ -91,12 +89,6 @@
       <option value="pao99Section">PAO 00–99</option>
       <option value="verseSection">Verse</option>
     </select>
-  </section>
-
-  <!-- 🔹 Libraries Viewer -->
-  <section id="libraries">
-    <h2>Libraries</h2>
-    <div id="librariesBar"></div>
   </section>
 
   <!-- 🔹 SAN Table -->
