@@ -60,7 +60,7 @@ button:hover, select:hover {
 /* === Textarea === */
 .textareas-container {
   display: flex;
-  gap: 100px;
+  gap: 10px;
 }
 
 #pgnText {
@@ -138,6 +138,7 @@ footer {
   position: sticky;
   bottom: 0;
 }
+
 
 
 
