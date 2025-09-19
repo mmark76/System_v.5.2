@@ -1,0 +1,142 @@
+/* === Basic Reset === */
+
+/* === Controls Section === */
+#controls {
+  position: sticky;
+  top: 0;
+  background: #111;
+  z-index: 1000;
+  padding: 10px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #111;    /* Μαύρο φόντο */
+  color: #eee;               /* Λευκά γράμματα */
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  padding: 10px;
+}
+
+/* === Header === */
+header {
+  background: #222;
+  padding: 15px;
+  margin-bottom: 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+header h1 {
+  margin-bottom: 10px;
+  font-size: 1.6em;
+}
+
+header .controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+button, select {
+  background: #333;
+  color: #eee;
+  border: 1px solid #555;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+button:hover, select:hover {
+  background: #444;
+}
+
+/* === Textarea === */
+.textareas-container {
+  display: flex;
+  gap: 100px;
+}
+
+#pgnText {
+  width: 40%;
+  height: 200px;
+  background: #222;
+  color: #eee;
+  border: 1px solid #555;
+  padding: 8px;
+  margin-bottom: 20px;
+  resize: vertical;
+}
+
+#libraryText {
+  width: 40%;  /* το δεξί λίγο πιο μεγάλο */
+  height: 200px;
+  background: #222;
+  color: #eee;
+  border: 1px solid #555;
+  padding: 8px;
+  margin-bottom: 20px;
+  resize: vertical;
+}
+
+/* === Tables === */
+.table-wrapper {
+  overflow-x: auto;
+  margin-bottom: 15px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 10px;
+}
+
+th, td {
+  border: 1px solid #444;
+  padding: 6px 10px;
+  text-align: center;
+}
+
+th {
+  background: #333;
+  color: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 500;
+}
+
+tr:nth-child(even) {
+  background: #1a1a1a;
+}
+
+tr:nth-child(odd) {
+  background: #111;
+}
+
+/* === Download Buttons === */
+.download-buttons {
+  margin-bottom: 30px;
+}
+
+.download-buttons button {
+  margin-right: 10px;
+}
+
+/* === Footer === */
+footer {
+  background: #222;
+  padding: 10px;
+  text-align: center;
+  color: #aaa;
+  font-size: 0.9em;
+  position: sticky;
+  bottom: 0;
+}
+
+

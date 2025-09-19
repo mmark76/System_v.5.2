@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    
+  <!-- ✅ Basic Meta -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <!-- ✅ Title -->
+  <title>Markellos Chess Mnemonic System v.5.2</title>
+  
+  <!-- ✅ SEO Meta -->
+  <meta name="description" content="Markellos Chess Mnemonic System v.5.2 — Chess mnemonic system with SAN, Associations, PAO, and Verse tables.">
+  <meta name="author" content="Markellos Markides">
+  <meta name="keywords" content="chess, PGN, SAN, mnemonic, PAO, memory palace, chess training, chess notation">
+  
+  <!-- ✅ Social / Open Graph -->
+  <meta property="og:title" content="Markellos Chess Mnemonic System v.5.2">
+  <meta property="og:description" content="Chess mnemonic system — Parse PGN and view SAN, Associations, PAO 0–9, PAO 00–99, and Verse tables.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://markellos-markides.blogspot.com/">
+    
+  <!-- ✅ Mobile -->
+  <meta name="theme-color" content="#222222">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  
+  <!-- ✅ CSS Styles -->
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="https://mmark76.github.io/chessboardjs-hosting/chessboardjs-1.0.0/css/chessboard-1.0.0.min.css" />
+  
+  <!-- ✅ External Libraries -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/chess.js/0.10.3/chess.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+  <script src="https://mmark76.github.io/chessboardjs-hosting/chessboardjs-1.0.0/js/chessboard-1.0.0.min.js"></script>
+    
+  <!-- ✅ Project Scripts -->
+  <script src="js/script.js" defer></script>
+    
+  <style>
+    .minimal-btn { background:#f8f8f8; border:1px solid #ccc; color:#222;
+      font-size:14px; padding:6px 14px; border-radius:7px; cursor:pointer; margin:2px;
+      transition:background .17s,border .17s;}
+    .minimal-btn:hover {background:#ececec; border:1px solid #999;}
+    .switch{position:relative;display:inline-block;width:34px;height:20px;vertical-align:middle;margin-left:8px;}
+    .switch input{opacity:0;width:0;height:0;}
+    .slider{position:absolute;cursor:pointer;top:0;left:0;right:0;bottom:0;background:#e2e5eb;border-radius:20px;transition:.3s;}
+    .slider:before{position:absolute;content:"";height:15px;width:15px;left:3px;bottom:2.3px;background:#fff;border-radius:50%;
+      box-shadow:0 1px 3px 0 #aaa;transition:.3s;}
+    input:checked + .slider{background:#3697ef;}
+    input:checked + .slider:before{transform:translateX(14px);}
+    .side-btn{background:#f6f8fa;border:1px solid #bcd3ea;color:#222;font-size:15px;padding:6px 26px;
+      border-radius:6px;cursor:pointer;transition:background .16s,border .16s;}
+    .side-btn.selected,.side-btn:hover{background:#3697ef;color:#fff;border:1.5px solid #3697ef;}
+    .row-hover{background:#f0f8ff;}
+    .row-selected{background:#cfe2ff;}
+  </style>
+</head>

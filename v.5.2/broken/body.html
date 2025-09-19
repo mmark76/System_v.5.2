@@ -1,0 +1,164 @@
+<body>
+  <!-- 🔹 Global Controls -->
+  <section id="controls">
+    <h1>Chess PGN Memory Trainer v.5.2</h1>
+    <textarea id="pgnText" rows="5" cols="60" placeholder="Επικόλλησε PGN εδώ"></textarea><br>
+    <input type="file" id="pgnFileInput">
+    <button id="parsePgnBtn">Parse PGN</button>
+    <button id="clearBtn">Clear</button>
+    <button id="openFenBuilderBtn">Άνοιγμα FEN Builder</button>
+
+    <!-- Global Language -->
+    <select id="langSelect">
+      <option value="el">Ελληνικά</option>
+      <option value="en">English</option>
+    </select>
+
+    <!-- Table Switcher -->
+    <select id="tableSelect">
+      <option value="san-table">SAN Table</option>
+      <option value="associations-table">Associations</option>
+      <option value="pao-0-9-table">PAO 0–9</option>
+      <option value="pao-00-99-table">PAO 00–99</option>
+      <option value="verse-table">Verse</option>
+    </select>
+  </section>
+
+  <!-- 🔹 Libraries Viewer -->
+  <section id="libraries">
+    <h2>Libraries</h2>
+    <div id="librariesBar"></div>
+  </section>
+
+  <!-- 🔹 SAN Table -->
+  <section id="san-table">
+    <h2>SAN Table</h2>
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th></th><th></th>
+            <th><select id="sanLocusSelect"><option>LibraryT1</option></select></th>
+            <th><select id="sanAnchorSelect"><option>LibraryT2</option></select></th>
+            <th></th><th></th><th></th><th></th>
+          </tr>
+          <tr>
+            <th>Move #</th><th>SAN</th><th>Locus</th><th>Anchor</th>
+            <th>Χρώμα</th><th>Piece</th><th>Target</th><th>FEN</th>
+          </tr>
+        </thead>
+        <tbody id="sanBody"></tbody>
+      </table>
+      <button onclick="downloadTableAsCSV('san-table','san.csv')">Download CSV</button>
+    </div>
+  </section>
+
+  <!-- 🔹 Associations Table -->
+  <section id="associations-table">
+    <h2>Associations Table</h2>
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th></th><th></th>
+            <th><select id="assocLocusSelect"><option>LibraryT1</option></select></th>
+            <th><select id="assocAnchorSelect"><option>LibraryT2</option></select></th>
+            <th></th>
+            <th><select id="assocCharactersSelect"><option value="LibraryC1">LibraryC1</option><option>LibraryC2</option></select></th>
+            <th><select id="assocTargetsSelect"><option>LibraryS1</option></select></th>
+          </tr>
+          <tr>
+            <th>Move #</th><th>SAN</th><th>Locus</th><th>Anchor</th>
+            <th>Χρώμα</th><th>Piece Association</th><th>Target Association</th>
+          </tr>
+        </thead>
+        <tbody id="assocBody"></tbody>
+      </table>
+      <button onclick="downloadTableAsCSV('associations-table','associations.csv')">Download CSV</button>
+    </div>
+  </section>
+
+  <!-- 🔹 PAO 0–9 Table -->
+  <section id="pao-0-9-table">
+    <h2>PAO 0–9 Table</h2>
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th></th><th></th>
+            <th><select id="paoLocusSelect"><option>LibraryT1</option></select></th>
+            <th><select id="paoAnchorSelect"><option>LibraryT2</option></select></th>
+            <th></th>
+            <th><select id="paoCodesSelect"><option>LibraryP1</option></select></th>
+            <th></th>
+          </tr>
+          <tr>
+            <th>Move #</th><th>SAN</th><th>Locus</th><th>Anchor</th>
+            <th>Χρώμα</th><th>PAO Code</th><th>Person / Action / Object</th>
+          </tr>
+        </thead>
+        <tbody id="paoBody"></tbody>
+      </table>
+      <button onclick="downloadTableAsCSV('pao-0-9-table','pao0-9.csv')">Download CSV</button>
+    </div>
+  </section>
+
+  <!-- 🔹 PAO 00–99 Table -->
+  <section id="pao-00-99-table">
+    <h2>PAO 00–99 Table</h2>
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th></th><th></th>
+            <th><select id="pao99LocusSelect"><option>LibraryT1</option></select></th>
+            <th><select id="pao99AnchorSelect"><option>LibraryT2</option></select></th>
+            <th></th>
+            <th></th>
+            <th>
+              <select id="pao99CollectionSelect">
+                <option value="LibraryP2">LibraryP2</option>
+                <option value="LibraryP3">LibraryP3</option>
+              </select>
+            </th>
+          </tr>
+          <tr>
+            <th>Move #</th><th>SAN</th><th>Locus</th><th>Anchor</th>
+            <th>Χρώμα</th><th>PAO Code (6-digit)</th><th>Person / Action / Object</th>
+          </tr>
+        </thead>
+        <tbody id="pao99Body"></tbody>
+      </table>
+      <button onclick="downloadTableAsCSV('pao-00-99-table','pao00-99.csv')">Download CSV</button>
+    </div>
+  </section>
+
+  <!-- 🔹 Verse Table -->
+  <section id="verse-table">
+    <h2>Verse Table</h2>
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th></th><th></th>
+            <th><select id="verseLocusSelect"><option>LibraryT1</option></select></th>
+            <th><select id="verseAnchorSelect"><option>LibraryT2</option></select></th>
+            <th></th>
+            <th><select id="verseLibrarySelect"><option>LibraryV1</option></select></th>
+          </tr>
+          <tr>
+            <th>Move #</th><th>SAN</th><th>Locus</th><th>Anchor</th>
+            <th>Χρώμα</th><th>Verse (4 γραμμές)</th>
+          </tr>
+        </thead>
+        <tbody id="verseBody"></tbody>
+      </table>
+      <button onclick="downloadTableAsCSV('verse-table','verse.csv')">Download CSV</button>
+    </div>
+  </section>
+
+  <!-- 🔹 Footer -->
+  <footer>
+    <p>© Markellos Markides 2025 — v.5.2</p>
+  </footer>
+</body>

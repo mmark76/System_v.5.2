@@ -1,0 +1,66 @@
+[User] 
+   │
+   ▼
+[HTML (head + body)]
+   │
+   ├── head.html
+   │     • meta, title
+   │     • link → styles.css
+   │     • script src="js/script.js"
+   │
+   └── body.html
+         • PGN controls (textarea, import, parse, clear)
+         • Dropdowns (langSelect, tableSelect, assocCharactersSelect, etc.)
+         • LibrariesBar (dynamic menu)
+         • Sections (SAN, Associations, PAO 0–9, PAO 00–99, Verse)
+         • Footer
+   │
+   ▼
+[script.js (v.5.2)]
+   │
+   ├── On load:
+   │     • fetch("libraries_v3.2.json")
+   │     • buildLibrariesBar()
+   │     • wire PGN controls
+   │     • wire TableSelect (εμφάνιση 1 πίνακα)
+   │
+   ├── Event handlers:
+   │     • Parse PGN → parsePGN() → δημιουργεί gameMoves[]
+   │     • Clear → αδειάζει PGN & πίνακες
+   │     • Download CSV → εξάγει active πίνακα
+   │     • Open FEN Builder → ανοίγει fen-builder.html
+   │
+   ├── Fill functions:
+   │     • fillSanTable() → Locus=T1, Anchor=T2, Piece=γράμμα—όνομα, FEN
+   │     • fillAssociationsTable() → C1/C2, S1
+   │     • fillPaoTable_0_9() → P1
+   │     • fillPaoTable_00_99() → P2/P3
+   │     • fillVerseTable() → V1 (4 γραμμές)
+   │
+   └── UI helpers:
+         • sideGR, pieceGreek, escapeHtml
+         • locusForMovePair, anchorForMovePair
+         • Libraries viewer popup
+   │
+   ▼
+[libraries_v3.2.json]
+   │
+   ├── Temporal: T1, T2
+   ├── Characters: C1, C2
+   ├── Spatial: S1
+   ├── PAO 0–9: P1
+   ├── PAO 00–99: P2, P3
+   └── Verses: V1
+   │
+   ▼
+[styles.css]
+   │
+   • Στυλ για tables, buttons, dropdowns
+   • .table-wrapper με scroll (3–4 γραμμές)
+   │
+   ▼
+[fen-builder.html]
+   │
+   • Αυτόνομο pop-up
+   • Σκακιέρα, castling, turn
+   • Κουμπιά: Clear, Start, Copy/Insert FEN
