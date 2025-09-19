@@ -65,7 +65,7 @@ button:hover, select:hover {
 
 #pgnText {
   width: 40%;
-  height: 200px;
+  height: 220px;
   background: #222;
   color: #eee;
   border: 1px solid #555;
@@ -76,7 +76,7 @@ button:hover, select:hover {
 
 #libraryText {
   width: 40%;  /* το δεξί λίγο πιο μεγάλο */
-  height: 200px;
+  height: 220px;
   background: #222;
   color: #eee;
   border: 1px solid #555;
@@ -138,5 +138,6 @@ footer {
   position: sticky;
   bottom: 0;
 }
+
 
 
